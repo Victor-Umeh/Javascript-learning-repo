@@ -1,16 +1,27 @@
 const btn = document.querySelector("button");
+//random number generator
+const random = () => {
+  return Math.trunc(Math.random() * 256);
+};
+//Function for shuffling
+function shuffleN(value) {
+  const shuffle = String(value).split("").reverse().join("");
 
-function random() {
-  return Math.trunc(Math.random() * 256);
+  if (shuffle <= 256) {
+    return Number(shuffle);
+  } else {
+    return random();
+  }
 }
-function random2() {
-  return Math.trunc(Math.random() * 256);
-}
-console.log(random());
+
+const dn = random();
+console.log(dn);
+console.log(shuffleN(dn));
 
 btn.addEventListener("click", () => {
   const rndColor = `rgb(${random()},${random()},${random()})`;
-  const rndColor2 = `rgb(${random2()},${random2()},${random2()})`;
+  const rndColor2 = `rgb(${shuffleN(dn)},${shuffleN(dn)},${shuffleN(dn)})`;
+
   btn.style.backgroundColor = rndColor2;
   document.body.style.backgroundColor = rndColor;
 });

@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Tahoma, sans-serif;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background: lightgray;
+}
+button {
+  all: unset;
+  background: red;
+  padding: 1em 3em;
+  border-radius: 50px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
